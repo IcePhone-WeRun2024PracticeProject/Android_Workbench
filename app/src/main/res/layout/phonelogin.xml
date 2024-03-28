@@ -1,12 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    
+    
+    <ImageView
+        android:id="@+id/back"
+        android:src="@drawable/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="TODO"></ImageView>
 
 
 
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ImageButton>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="手机号验证码登录"
+        android:textSize="30dp"></TextView>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/text"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edittextbackground"
+        android:inputType="number"
+        />
+
+    <ImageView
+        android:layout_alignTop="@id/text"
+        android:layout_marginTop="120dp"
+        android:id="@+id/phone"
+        android:src="@drawable/telephone"
+        android:layout_alignLeft="@id/editText1"
+        android:layout_width="40dp"
+        android:layout_height="45dp"/>
+
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="70dp"
+        android:layout_alignTop="@id/editText1"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:background="@drawable/edittextbackground"
+        />
+
+
+    <ImageView
+        android:src="@drawable/security"
+        android:layout_marginTop="70dp"
+        android:layout_alignTop="@id/editText1"
+        android:layout_alignLeft="@id/editText2"
+        android:id="@+id/security"
+        android:layout_width="40dp"
+        android:layout_height="45dp"/>
+
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@id/editText1"
+        android:layout_alignRight="@id/editText1"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/buttonbackground1"
+        android:text="获取验证码"
+        android:textColor="#A9A9A9"
+        android:textSize="14dp" />
+
+    <Button
+        android:textSize="25sp"
+        android:text="登录"
+        android:layout_marginTop="390dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/bt2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#87CEFA"
+        android:textColor="#000000"
+        />
+
+
+</RelativeLayout>
