@@ -1,3 +1,4 @@
+//手机号登陆界面
 package com.example.android_workbench_v1.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -5,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.android_workbench_v1.R;
@@ -15,22 +17,34 @@ public class phonelogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phonelogin);
-
-        /*设置“返回”的点击事件----------------------------------------3.29 21：15  by smr */
+        //”返回键“功能实现
         ImageView back = findViewById(R.id.back);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             /* Intent intent =new Intent(phonelogin.this,"主界面")
+             /* Intent intent1 =new Intent(phonelogin.this,"登录主界面")
                 startActivity(intent);*/
-                /*设置点击“返回时”从当前界面返回到登陆主界面*/
-                /*等界面全部绘制好便可把注释语句内的对应内容填充完毕*/
-
-
 
             }
         });
+
+
+
+
+
+
+
+
+
+        //”登录健”功能实现
+        Button log = findViewById(R.id.bt2);
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(phonelogin.this,mainPage.class);
+            }
+        });
+
     }
 
 

@@ -30,7 +30,6 @@
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:background="@drawable/edittextbackground"
-        android:inputType="number"
         />
 
     <ImageView
@@ -50,7 +49,6 @@
         android:layout_alignTop="@id/editText1"
         android:layout_width="140dp"
         android:layout_height="50dp"
-        android:inputType="number"
         android:background="@drawable/edittextbackground"
         />
 
