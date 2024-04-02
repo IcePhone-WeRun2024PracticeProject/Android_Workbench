@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginFragment">
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:id="@+id/shanghua"
+        android:background="@color/material_dynamic_neutral40"></View>
+    <EditText
+        android:id="@+id/account_login"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_btn3"
+        android:drawableLeft="@drawable/account"
+        android:inputType="text"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/password_login"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_btn3"
+        android:layout_marginTop="120dp"
+        android:drawableLeft="@drawable/password"
+        android:inputType="text"
+        android:paddingLeft="10dp" />
+    <Button
+        android:id="@+id/test_login"
+        android:layout_marginTop="200dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="60dp"
+        android:shadowColor="@color/white"
+        android:text="手机验证码登录"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/forget"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="200dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:shadowColor="@color/white"
+        android:text="忘记密码"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/register"
+        android:layout_marginTop="250dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_btn_ori"
+        android:text="登录"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="320dp"
+        android:text="第三方登录"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="370dp"
+        android:layout_height="2dp"
+        android:id="@+id/xiahua"
+        android:background="@color/material_dynamic_neutral40"></View>
+    <ImageView
+        android:id="@+id/wechat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="70dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/wechat" />
+    <ImageView
+        android:id="@+id/qq"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/qq" />
+    <ImageView
+        android:id="@+id/github"
+        android:layout_marginLeft="300dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="380dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/github" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+
+        android:paddingLeft="15dp"
+        android:text="登录表示你同意该软件用户服务协议和隐私政策"
+        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"/>
+
+
+</RelativeLayout>
