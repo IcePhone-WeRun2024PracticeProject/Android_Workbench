@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputFilter;
+import android.text.InputType;
 import android.text.Spanned;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -27,8 +28,8 @@ public class forgetPassword extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(forgetPassword.this,"登陆主界面");
-                  startActivity(intent);*/
+                Intent intent = new Intent(forgetPassword.this, mainPage.class);
+
 
             }
         });
@@ -61,10 +62,13 @@ public class forgetPassword extends AppCompatActivity {
                 return "";
             }
         };
-        passwordEditText1.setFilters(passwordFilters1);
-        //密码确认
+        passwordEditText1.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passwordEditText1.setFilters(new InputFilter[]{passwordFilters1[0]});
+
+
+        //密码输入限制
         EditText passwordEditText2 = findViewById(R.id.editText3);
-        passwordEditText2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        passwordEditText1.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
         InputFilter[] passwordFilters2 = new InputFilter[1];
         passwordFilters2[0] = new InputFilter() {
@@ -76,7 +80,50 @@ public class forgetPassword extends AppCompatActivity {
                 return "";
             }
         };
-        passwordEditText2.setFilters(passwordFilters2);
+        passwordEditText2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passwordEditText2.setFilters(new InputFilter[]{passwordFilters1[0]});
+
+
+
+        //手机号输入格式
+        EditText phoneNumberEditText = findViewById(R.id.editText1);
+        phoneNumberEditText.setInputType(InputType.TYPE_CLASS_NUMBER); // 设置输入类型为数字
+
+        InputFilter[] filter_phonenumber = new InputFilter[2];
+        filter_phonenumber[0] = new InputFilter.LengthFilter(11); // 设置位数限制为11位
+        filter_phonenumber[1] = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end,  Spanned dest, int dstart, int dend) {
+                // 检查输入的字符是否为数字
+                for (int i = start; i < end; i++) {
+                    if (!Character.isDigit(source.charAt(i))) {
+                        return ""; // 如果输入的字符不是数字，则禁止输入
+                    }
+                }
+                return null; // 允许输入
+            }
+        };
+        phoneNumberEditText.setFilters(filter_phonenumber);
+
+        //验证码数据格式
+        EditText testNumberEditText = findViewById(R.id.editText2);
+        testNumberEditText.setInputType(InputType.TYPE_CLASS_NUMBER); // 设置输入类型为数字
+
+        InputFilter[] filter_test = new InputFilter[2];
+        filter_test[0] = new InputFilter.LengthFilter(6); // 设置位数限制为6位
+        filter_test[1] = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                // 检查输入的字符是否为数字
+                for (int i = start; i < end; i++) {
+                    if (!Character.isDigit(source.charAt(i))) {
+                        return ""; // 如果输入的字符不是数字，则禁止输入
+                    }
+                }
+                return null; // 允许输入
+            }
+        };
+        testNumberEditText.setFilters(filter_test);
 
 
 
