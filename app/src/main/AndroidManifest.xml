@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -14,22 +13,25 @@
         android:theme="@style/Theme.Hadabing"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.android_workbench_v1.Login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginFragment"
+            android:name="com.example.android_workbench_v1.Login.LoginFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.android_workbench_v1.Login.RegisterFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.android_workbench_v1.Login.ViewPagerAdapter"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.android_workbench_v1.Login.BlankActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterFragment"
-            android:exported="false" />
-        <activity
-            android:name=".ViewPagerAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".BlankActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.android_workbench_v1.Login.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
