@@ -33,6 +33,8 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
         EditText accountLogin = view.findViewById(R.id.account_login);
         InputFilter filter_login = new InputFilter() {
             @Override
@@ -82,6 +84,24 @@ public class LoginFragment extends Fragment {
                 }
             }
         });
+        //点击实现跳转到验证码登录
+        Button testBt = view.findViewById(R.id.test_login);
+        testBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_test_login = new Intent(getActivity(), phonelogin.class);
+                startActivity(intent_test_login);
+            }
+        });
+        //点击实现跳转到“忘记密码”
+        Button forget = view.findViewById(R.id.forget);
+        forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent forget = new Intent(getActivity(), forgetPassword.class);
+                startActivity(forget);
+            }
+        });
     }
 
     // 检查输入是否合法的方法
@@ -89,5 +109,6 @@ public class LoginFragment extends Fragment {
         // 账户和密码不为空且满足指定条件
         return account.equals("zhanghu") && password.equals("123");
     }
+
 }
 

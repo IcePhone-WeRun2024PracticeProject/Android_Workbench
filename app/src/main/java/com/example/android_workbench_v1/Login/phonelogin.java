@@ -26,8 +26,8 @@ public class phonelogin extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             /*Intent intent1 =new Intent(phonelogin.this, mainPage.class);
-                startActivity(intent1);*/
+             Intent intent1 =new Intent(phonelogin.this, LoginActivity.class);
+                startActivity(intent1);
 
             }
         });
@@ -42,7 +42,7 @@ public class phonelogin extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(phonelogin.this,mainPage.class);
+                Intent intent2 = new Intent(phonelogin.this,BlankActivity.class);
             }
         });
 
