@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import com.example.android_workbench_v1.R;
 
-public class phonelogin extends AppCompatActivity {
+public class PhoneLogin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,11 @@ public class phonelogin extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             Intent intent1 =new Intent(phonelogin.this, LoginActivity.class);
+             Intent intent1 =new Intent(PhoneLogin.this, LoginActivity.class);
                 startActivity(intent1);
 
             }
         });
-
-
-
 
 
 
@@ -42,7 +39,8 @@ public class phonelogin extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(phonelogin.this,BlankActivity.class);
+                Intent intent2 = new Intent(PhoneLogin.this,BlankActivity.class);
+                startActivity(intent2);
             }
         });
 

@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 import com.example.android_workbench_v1.R;
 
-public class forgetPassword extends AppCompatActivity {
+public class ForgetPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,7 +28,7 @@ public class forgetPassword extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(forgetPassword.this, LoginActivity.class);
+                Intent intent = new Intent(ForgetPassword.this, LoginActivity.class);
 
 
             }

@@ -13,11 +13,12 @@
         android:theme="@style/Theme.Hadabing"
         tools:targetApi="31">
         <activity
-            android:name="com.example.android_workbench_v1.Login.phonelogin"
+            android:name="com.example.android_workbench_v1.Login.ForgetPassword"
             android:exported="false" />
         <activity
-            android:name="com.example.android_workbench_v1.Login.forgetPassword"
+            android:name="com.example.android_workbench_v1.Login.PhoneLogin"
             android:exported="false" />
+
         <activity
             android:name="com.example.android_workbench_v1.Login.LoginActivity"
             android:exported="false" />

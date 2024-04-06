@@ -89,7 +89,7 @@ public class LoginFragment extends Fragment {
         testBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_test_login = new Intent(getActivity(), phonelogin.class);
+                Intent intent_test_login = new Intent(getActivity(), PhoneLogin.class);
                 startActivity(intent_test_login);
             }
         });
@@ -98,7 +98,7 @@ public class LoginFragment extends Fragment {
         forget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent forget = new Intent(getActivity(), forgetPassword.class);
+                Intent forget = new Intent(getActivity(), ForgetPassword.class);
                 startActivity(forget);
             }
         });
