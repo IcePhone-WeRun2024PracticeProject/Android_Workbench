@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.android_workbench_v1.R;
 
@@ -20,7 +21,7 @@ public class PhoneLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.phonelogin);
+        setContentView(R.layout.phone_login);
         //”返回键“功能实现
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,7 @@ public class PhoneLogin extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(PhoneLogin.this,BlankActivity.class);
                 startActivity(intent2);
+                Toast.makeText(PhoneLogin.this, "登录成功", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -62,9 +64,6 @@ public class PhoneLogin extends AppCompatActivity {
             }
         };
         phoneNumberEditText.setFilters(filter_phonenumber);
-
-
-
 
 
 

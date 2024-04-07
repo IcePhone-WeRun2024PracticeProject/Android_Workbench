@@ -14,11 +14,11 @@
         tools:targetApi="31">
         <activity
             android:name="com.example.android_workbench_v1.Login.ForgetPassword"
-            android:exported="false" />
+            android:exported="true"/>
+
         <activity
             android:name="com.example.android_workbench_v1.Login.PhoneLogin"
             android:exported="false" />
-
         <activity
             android:name="com.example.android_workbench_v1.Login.LoginActivity"
             android:exported="false" />
@@ -45,6 +45,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

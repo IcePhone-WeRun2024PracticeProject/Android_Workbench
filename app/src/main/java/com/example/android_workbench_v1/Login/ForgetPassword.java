@@ -11,16 +11,13 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.example.android_workbench_v1.R;
 
 public class ForgetPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.forgetpassword);
+        setContentView(R.layout.forget_password);
 
         /*设置“返回”的点击事件 */
 
@@ -29,7 +26,7 @@ public class ForgetPassword extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ForgetPassword.this, LoginActivity.class);
-
+                startActivity(intent);
 
             }
         });
@@ -48,45 +45,46 @@ public class ForgetPassword extends AppCompatActivity {
                 }
         });
 
-        //密码输入限制
-        EditText passwordEditText1 = findViewById(R.id.editText2);
-        passwordEditText1.setTransformationMethod(PasswordTransformationMethod.getInstance());
-
-        InputFilter[] passwordFilters1 = new InputFilter[1];
-        passwordFilters1[0] = new InputFilter() {
-            @Override
-            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                if (Character.toString(source.charAt(start)).matches("[\\u4e00-\\u9fa5]+") && !source.toString().matches("^[^a-zA-Z0-9_].*")) {
-                    return source;
-                }
-                return "";
-            }
-        };
-        passwordEditText1.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        passwordEditText1.setFilters(new InputFilter[]{passwordFilters1[0]});
-
 
         //密码输入限制
-        EditText passwordEditText2 = findViewById(R.id.editText3);
-        passwordEditText1.setTransformationMethod(PasswordTransformationMethod.getInstance());
-
-        InputFilter[] passwordFilters2 = new InputFilter[1];
-        passwordFilters2[0] = new InputFilter() {
+        EditText passwordLogin = findViewById(R.id.editText2);
+        InputFilter filter_password = new InputFilter() {
             @Override
             public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                if (Character.toString(source.charAt(start)).matches("[\\u4e00-\\u9fa5]+") && !source.toString().matches("^[^a-zA-Z0-9_].*")) {
-                    return source;
+                if (Character.toString(source.charAt(start)).matches("[\\u4e00-\\u9fa5]+") && !source.toString().matches("^[^a-zA-Z0-9_].*"))
+                {
+                    return " ";
                 }
-                return "";
+                return source;
             }
+
         };
-        passwordEditText2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        passwordEditText2.setFilters(new InputFilter[]{passwordFilters1[0]});
+        passwordLogin.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passwordLogin.setFilters(new InputFilter[]{filter_password});
+
+
+        //密码输入限制
+        EditText passwordLogin2 = findViewById(R.id.editText3);
+        InputFilter filter_password2 = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                if (Character.toString(source.charAt(start)).matches("[\\u4e00-\\u9fa5]+") && !source.toString().matches("^[^a-zA-Z0-9_].*"))
+                {
+                    return " ";
+                }
+                return source;
+
+            }
+
+        };
+        passwordLogin2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passwordLogin2.setFilters(new InputFilter[]{filter_password2});
+
 
 
 
         //手机号输入格式
-        EditText phoneNumberEditText = findViewById(R.id.editText1);
+        EditText phoneNumberEditText = findViewById(R.id.editText4);
         phoneNumberEditText.setInputType(InputType.TYPE_CLASS_NUMBER); // 设置输入类型为数字
 
         InputFilter[] filter_phonenumber = new InputFilter[2];
@@ -105,8 +103,9 @@ public class ForgetPassword extends AppCompatActivity {
         };
         phoneNumberEditText.setFilters(filter_phonenumber);
 
+
         //验证码数据格式
-        EditText testNumberEditText = findViewById(R.id.editText2);
+        EditText testNumberEditText = findViewById(R.id.editText5);
         testNumberEditText.setInputType(InputType.TYPE_CLASS_NUMBER); // 设置输入类型为数字
 
         InputFilter[] filter_test = new InputFilter[2];
@@ -124,6 +123,8 @@ public class ForgetPassword extends AppCompatActivity {
             }
         };
         testNumberEditText.setFilters(filter_test);
+
+
 
 
 
